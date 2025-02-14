@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-
 :root{
   --fonte-padrao: Poppins;
   --cor-texto: #fff;
@@ -19,14 +18,18 @@
   margin: 0px;
   padding: 0px;
   font-family: var(--fonte-padrao);
+  box-sizing: border-box;
 }
 
 html, body {
   background-color: var(--cor-caixa-secundaria);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-header{
+header {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -34,19 +37,12 @@ header{
   font-size: 1.1em;
   background-color: var(--cor-navigation);
   color: var(--cor-texto);
-  position: absolute;
+  position: fixed;
   top: 0px;
   z-index: 1;
-}
-
-header > div{
-  flex: 1 1 50%;
-  border-bottom: 2px solid var(--cor-fundo);
-}
-
-
-button{
-  cursor:pointer;
+  height: 60px;
+  align-items: center;
+  padding: 0 20px;
 }
 
 #logo{
@@ -60,25 +56,90 @@ button{
   margin: 10px;
 }
 
-.menu{
+.menu {
   background-color: var(--cor-navigation);
-  position: absolute;
-  height: 95vh;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  height: calc(100vh - 60px);
   width: 230px;
-  z-index: 0;
-
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.menu ul{
+.menu ul {
   list-style-type: none;
-  padding-top: 30px;
+  width: 100%;
+  padding: 0;
 }
 
-a{
+.menu li {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu a {
   text-decoration: none;
   color: var(--cor-texto);
+  display: block;
+  width: 100%;
 }
 
-.menu li:hover{
-   background-color: aliceblue;
+.menu li:hover {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-terciaria);
+}
+
+main {
+  margin-left: 250px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  width: calc(100% - 250px);
+}
+
+form {
+  background: var(--cor-caixa);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--cor-texto);
+  max-width: 500px;
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background: var(--cor-primaria);
+  color: var(--cor-texto);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: var(--cor-secundaria);
 }

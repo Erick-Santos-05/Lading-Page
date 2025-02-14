@@ -13,20 +13,43 @@
         <img src="img/logo-petrofind.png" alt="logo PetroFind">
         <p>PetroFind</p>
     </div>
-</header>
-<main>
-   <div class="menu">
-       
-    <ul>
-      <li><a href="">
-      Solicitar orçamento
-      </a></li>
-      <li><a href="">
-        Orçamento
-        </a></li>
-    </ul>
+  </header>
+  <main>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Solicitar orçamento</a></li>
+        <li><a href="#">Orçamento</a></li>
+      </ul>
+    </div>
 
-   </div>
+    <div>
+      <form id="customForm">
+        <label>Usuários adicionais (R$ 50 por usuário): </label>
+        <input type="number" id="usuariosExtra" min="0" value="0"><br><br>
+
+        <label>Armazenamento adicional (R$ 5 por GB): </label>
+        <input type="number" id="dadosExtra" min="0" value="0"> GB<br><br>
+
+        <label>
+            <input type="checkbox" class="addon" value="1000" data-name="IA Avançada"> IA Avançada (+R$ 1.000)
+        </label><br>
+
+        <label>
+            <input type="checkbox" class="addon" value="700" data-name="Suporte Prioritário"> Suporte 24/7 Prioritário (+R$ 700)
+        </label><br>
+
+        <label>
+            <input type="checkbox" class="addon" value="800" data-name="Integração Personalizada"> Integração com sistemas personalizados (+R$ 800)
+        </label><br>
+
+        <label>
+            <input type="checkbox" class="addon" value="600" data-name="Relatórios Automatizados"> Exportação de relatórios automatizados (+R$ 600)
+        </label><br><br>
+
+        <button type="button" onclick="salvarEscolhas()">Salvar Escolhas</button>
+      </form>
+    </div>
   </main>
+  <script src="script/script.js"></script>
 </body>
 </html>
